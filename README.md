@@ -14,8 +14,11 @@ To run this example:
 
 2. Run the app..
 
-    `java -cp target/uber-kafka-streams-wordcount-1.0-SNAPSHOT.jar com.dcclab.examples.streams.wordcount.WordCountExample`
+    java -cp target/uber-kafka-streams-wordcount-1.0-SNAPSHOT.jar com.dcclab.examples.streams.wordcount.WordCountExample
 
-3. Take a look at the results:
+3. Make the output topic
+   bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic wordcount-output --replication-factor 1
 
-    `bin/kafka-console-consumer.sh --topic wordcount-output --from-beginning --bootstrap-server localhost:9092  --property print.key=true`
+4. Take a look at the results:
+
+    bin/kafka-console-consumer.sh --topic wordcount-output --from-beginning --bootstrap-server localhost:9092 --property print.key=true
