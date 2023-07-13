@@ -11,7 +11,7 @@ To run this example:
 
     C. During run, you have to get statistics about latency, throughput
 
-2. Run the app:
+2. Run the app..
 
     `java -cp target/uber-kafka-streams-wordcount-1.0-SNAPSHOT.jar com.dcclab.examples.streams.wordcount.WordCountExample`
 
