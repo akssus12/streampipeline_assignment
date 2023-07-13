@@ -1,6 +1,7 @@
 To run this example:
 
 0. Build the project with `mvn package`, this will generate an uber-jar with the streams app and all its dependencies.
+    When you modify the source code, you have to re-build java code. After successfully building, you can get ~.jar file in target folder.
 
 1. Produce some text to the topic.
     Using HiBench(lass@163.239.14.92), please generate the dataset for counting words.
