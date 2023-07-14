@@ -38,7 +38,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <finalName>uber-${artifactId}-${version}</finalName>
+                    <finalName>dcclab-streamwordcount</finalName>
                 </configuration>
             </plugin>
         </plugins>
