@@ -16,5 +16,5 @@ echo "cache cleaning is complete"
 #$KAFKA_HOME/bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic wordcount-output3 --replication-factor 1 --config message.timestamp.type=LogAppendTime
 
 echo "All kafka topic settings are complete"
-java -cp target/dcclab-streamwordcount.jar com.dcclab.examples.streams.wordcount.WordCountExample /home/dccvenus/framework/kafka-3.2.3/build/libs/kafka-3.2.3-3.2.3.jar
+java -cp target/dcclab-streamwordcount.jar com.dcclab.examples.streams.wordcount.WordCountExample
 ./kill_example.sh
