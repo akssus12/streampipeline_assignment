@@ -1,0 +1,54 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for streams-wordcount:kafka-streams-wordcount:jar:1.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-shade-plugin is missing. @ line 39, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------< streams-wordcount:kafka-streams-wordcount >--------------
+[INFO] Building kafka-streams-wordcount 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ kafka-streams-wordcount ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ kafka-streams-wordcount ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ kafka-streams-wordcount ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/dccvenus/framework/kafka_streams/wordcount/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ kafka-streams-wordcount ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ kafka-streams-wordcount ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ kafka-streams-wordcount ---
+[INFO] 
+[INFO] --- maven-shade-plugin:3.5.0:shade (default) @ kafka-streams-wordcount ---
+[INFO] Including org.apache.kafka:kafka-streams:jar:3.2.3.1 in the shaded jar.
+[INFO] Including org.slf4j:slf4j-api:jar:1.7.6 in the shaded jar.
+[INFO] Including org.slf4j:slf4j-log4j12:jar:1.7.5 in the shaded jar.
+[INFO] Including log4j:log4j:jar:1.2.17 in the shaded jar.
+[INFO] Dependency-reduced POM written at: /home/dccvenus/framework/kafka_streams/wordcount/dependency-reduced-pom.xml
+[WARNING] kafka-streams-3.2.3.1.jar, kafka-streams-wordcount-1.0-SNAPSHOT.jar, log4j-1.2.17.jar, slf4j-api-1.7.6.jar, slf4j-log4j12-1.7.5.jar define 1 overlapping resource: 
+[WARNING]   - META-INF/MANIFEST.MF
+[WARNING] maven-shade-plugin has detected that some files are
+[WARNING] present in two or more JARs. When this happens, only one
+[WARNING] single version of the file is copied to the uber jar.
+[WARNING] Usually this is not harmful and you can skip these warnings,
+[WARNING] otherwise try to manually exclude artifacts based on
+[WARNING] mvn dependency:tree -Ddetail=true and the above output.
+[WARNING] See https://maven.apache.org/plugins/maven-shade-plugin/
+[INFO] Replacing /home/dccvenus/framework/kafka_streams/wordcount/target/dcclab-streamwordcount.jar with /home/dccvenus/framework/kafka_streams/wordcount/target/kafka-streams-wordcount-1.0-SNAPSHOT-shaded.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.984 s
+[INFO] Finished at: 2023-07-26T04:28:34Z
+[INFO] ------------------------------------------------------------------------

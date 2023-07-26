@@ -1,0 +1,530 @@
+20-07-2023 10:53:47 INFO  StreamsConfig:361 - StreamsConfig values: 
+	acceptable.recovery.lag = 10000
+	application.id = stream_wordcount_application
+	application.server = 
+	bootstrap.servers = [localhost:9092]
+	buffered.records.per.partition = 1000
+	built.in.metrics.version = latest
+	cache.max.bytes.buffering = 10485760
+	client.id = stream_wordcount_client
+	commit.interval.ms = 30000
+	connections.max.idle.ms = 540000
+	default.deserialization.exception.handler = class org.apache.kafka.streams.errors.LogAndFailExceptionHandler
+	default.key.serde = class org.apache.kafka.common.serialization.Serdes$StringSerde
+	default.production.exception.handler = class org.apache.kafka.streams.errors.DefaultProductionExceptionHandler
+	default.timestamp.extractor = class org.apache.kafka.streams.processor.FailOnInvalidTimestamp
+	default.value.serde = class org.apache.kafka.common.serialization.Serdes$StringSerde
+	default.windowed.key.serde.inner = null
+	default.windowed.value.serde.inner = null
+	max.task.idle.ms = 0
+	max.warmup.replicas = 2
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = DEBUG
+	metrics.sample.window.ms = 30000
+	num.standby.replicas = 0
+	num.stream.threads = 1
+	partition.grouper = class org.apache.kafka.streams.processor.DefaultPartitionGrouper
+	poll.ms = 100
+	probing.rebalance.interval.ms = 600000
+	processing.guarantee = at_least_once
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	replication.factor = 1
+	request.timeout.ms = 40000
+	retries = 0
+	retry.backoff.ms = 100
+	rocksdb.config.setter = class com.dcclab.examples.streams.wordcount.WordCountExample$CustomRocksDBConfig
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	state.cleanup.delay.ms = 600000
+	state.dir = /tmp/kafka-streams
+	task.timeout.ms = 300000
+	topology.optimization = none
+	upgrade.from = null
+	windowstore.changelog.additional.retention.ms = 86400000
+
+20-07-2023 10:53:47 WARN  StateDirectory:134 - Using /tmp directory in the state.dir property can cause failures with writing the checkpoint file due to the fact that this directory can be cleared by the OS
+20-07-2023 10:53:47 INFO  StateDirectory:206 - No process id found on disk, got fresh process id 17af600f-2160-4fa7-b99e-7c0f4cd8ce92
+20-07-2023 10:53:47 INFO  KafkaStreams:717 - stream-client [stream_wordcount_client] Kafka Streams version: 2.7.1
+20-07-2023 10:53:47 INFO  KafkaStreams:718 - stream-client [stream_wordcount_client] Kafka Streams commit ID: 61dbce85d0d41457
+20-07-2023 10:53:47 INFO  AdminClientConfig:361 - AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = stream_wordcount_client-admin
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = DEBUG
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 127000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+20-07-2023 10:53:47 INFO  AppInfoParser:119 - Kafka version: 2.7.1
+20-07-2023 10:53:47 INFO  AppInfoParser:120 - Kafka commitId: 61dbce85d0d41457
+20-07-2023 10:53:47 INFO  AppInfoParser:121 - Kafka startTimeMs: 1689850427639
+20-07-2023 10:53:47 INFO  StreamThread:314 - stream-thread [stream_wordcount_client-StreamThread-1] Creating restore consumer client
+20-07-2023 10:53:47 INFO  ConsumerConfig:361 - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = none
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = stream_wordcount_client-StreamThread-1-restore-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = null
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = DEBUG
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	socket.connection.setup.timeout.max.ms = 127000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+20-07-2023 10:53:47 INFO  AppInfoParser:119 - Kafka version: 2.7.1
+20-07-2023 10:53:47 INFO  AppInfoParser:120 - Kafka commitId: 61dbce85d0d41457
+20-07-2023 10:53:47 INFO  AppInfoParser:121 - Kafka startTimeMs: 1689850427672
+20-07-2023 10:53:47 INFO  StreamThread:96 - stream-thread [stream_wordcount_client-StreamThread-1] Creating thread producer client
+20-07-2023 10:53:47 INFO  ProducerConfig:361 - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = stream_wordcount_client-StreamThread-1-producer
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	internal.auto.downgrade.txn.commit = false
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = DEBUG
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 127000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 10000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+20-07-2023 10:53:47 INFO  AppInfoParser:119 - Kafka version: 2.7.1
+20-07-2023 10:53:47 INFO  AppInfoParser:120 - Kafka commitId: 61dbce85d0d41457
+20-07-2023 10:53:47 INFO  AppInfoParser:121 - Kafka startTimeMs: 1689850427702
+20-07-2023 10:53:47 INFO  StreamThread:363 - stream-thread [stream_wordcount_client-StreamThread-1] Creating consumer client
+20-07-2023 10:53:47 INFO  ConsumerConfig:361 - ConsumerConfig values: 
+	allow.auto.create.topics = false
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = stream_wordcount_client-StreamThread-1-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = stream_wordcount_application
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = DEBUG
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	socket.connection.setup.timeout.max.ms = 127000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+20-07-2023 10:53:47 INFO  AssignorConfiguration:215 - stream-thread [stream_wordcount_client-StreamThread-1-consumer] Cooperative rebalancing enabled now
+20-07-2023 10:53:47 INFO  AppInfoParser:119 - Kafka version: 2.7.1
+20-07-2023 10:53:47 INFO  AppInfoParser:120 - Kafka commitId: 61dbce85d0d41457
+20-07-2023 10:53:47 INFO  AppInfoParser:121 - Kafka startTimeMs: 1689850427737
+20-07-2023 10:53:47 WARN  KafkaStreams:1356 - stream-client [stream_wordcount_client] RocksDB's version will be bumped to version 6+ via KAFKA-8897 in a future release. If you use `org.rocksdb.CompactionOptionsFIFO#setTtl(long)` or `#ttl()` you will need to rewrite your code after KAFKA-8897 is resolved and set TTL via `org.rocksdb.Options` (or `org.rocksdb.ColumnFamilyOptions`).
+20-07-2023 10:53:47 INFO  WordCountExample:65 - Conductor in Reporter Class
+20-07-2023 10:53:47 INFO  KafkaStreams:281 - stream-client [stream_wordcount_client] State transition from CREATED to REBALANCING
+20-07-2023 10:53:47 INFO  StreamThread:516 - stream-thread [stream_wordcount_client-StreamThread-1] Starting
+20-07-2023 10:53:47 INFO  WordCountExample:82 - Average Flush Latency 0.0
+20-07-2023 10:53:47 INFO  StreamThread:225 - stream-thread [stream_wordcount_client-StreamThread-1] State transition from CREATED to STARTING
+20-07-2023 10:53:47 INFO  WordCountExample:83 - Average Process Rate 0.0
+20-07-2023 10:53:47 INFO  KafkaConsumer:961 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Subscribed to topic(s): stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition, wordcount2
+20-07-2023 10:53:47 INFO  StreamThread:732 - stream-thread [stream_wordcount_client-StreamThread-1] Processed 0 total records, ran 0 punctuators, and committed 0 total tasks since the last update
+20-07-2023 10:53:47 INFO  Metadata:279 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Cluster ID: bfIokctfRDqL6cF8ozX5Eg
+20-07-2023 10:53:47 INFO  Metadata:279 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Cluster ID: bfIokctfRDqL6cF8ozX5Eg
+20-07-2023 10:53:47 INFO  AbstractCoordinator:844 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Discovered group coordinator 163.239.22.36:9092 (id: 2147483647 rack: null)
+20-07-2023 10:53:47 INFO  AbstractCoordinator:538 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] (Re-)joining group
+20-07-2023 10:53:47 INFO  AbstractCoordinator:538 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] (Re-)joining group
+20-07-2023 10:53:47 INFO  AbstractCoordinator:594 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Successfully joined group with generation Generation{generationId=42, memberId='stream_wordcount_client-StreamThread-1-consumer-5bafd7d1-6ac9-41e2-909a-6ba71a948481', protocol='stream'}
+20-07-2023 10:53:48 INFO  HighAvailabilityTaskAssignor:95 - Decided on assignment: {17af600f-2160-4fa7-b99e-7c0f4cd8ce92=[activeTasks: ([0_0, 0_1, 0_2, 0_3, 0_4, 0_5, 0_6, 0_7, 1_0, 1_1, 1_2, 1_3, 1_4, 1_5, 1_6, 1_7]) standbyTasks: ([]) prevActiveTasks: ([]) prevStandbyTasks: ([]) changelogOffsetTotalsByTask: ([]) taskLagTotals: ([1_0=5842374, 1_1=5854102, 1_2=5860839, 1_3=5898053, 1_4=5918712, 1_5=5894868, 1_6=5911710, 1_7=5900258]) capacity: 1 assigned: 16]} with no followup probing rebalance.
+20-07-2023 10:53:48 INFO  StreamsPartitionAssignor:749 - stream-thread [stream_wordcount_client-StreamThread-1-consumer] Assigned tasks [0_0, 0_1, 1_0, 0_2, 1_1, 0_3, 1_2, 0_4, 1_3, 0_5, 1_4, 0_6, 1_5, 0_7, 1_6, 1_7] including stateful [1_0, 1_1, 1_2, 1_3, 1_4, 1_5, 1_6, 1_7] to clients as: 
+17af600f-2160-4fa7-b99e-7c0f4cd8ce92=[activeTasks: ([0_0, 0_1, 0_2, 0_3, 0_4, 0_5, 0_6, 0_7, 1_0, 1_1, 1_2, 1_3, 1_4, 1_5, 1_6, 1_7]) standbyTasks: ([])].
+20-07-2023 10:53:48 INFO  StreamsPartitionAssignor:983 - stream-thread [stream_wordcount_client-StreamThread-1-consumer] Client 17af600f-2160-4fa7-b99e-7c0f4cd8ce92 per-consumer assignment:
+	prev owned active {}
+	prev owned standby {stream_wordcount_client-StreamThread-1-consumer-5bafd7d1-6ac9-41e2-909a-6ba71a948481=[]}
+	assigned active {stream_wordcount_client-StreamThread-1-consumer-5bafd7d1-6ac9-41e2-909a-6ba71a948481=[0_0, 1_0, 0_1, 1_1, 0_2, 1_2, 0_3, 1_3, 0_4, 1_4, 0_5, 1_5, 0_6, 1_6, 0_7, 1_7]}
+	revoking active {}	assigned standby {}
+
+20-07-2023 10:53:48 INFO  StreamsPartitionAssignor:1002 - stream-thread [stream_wordcount_client-StreamThread-1-consumer] Finished stable assignment of tasks, no followup rebalances required.
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:626 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Finished assignment for group at generation 42: {stream_wordcount_client-StreamThread-1-consumer-5bafd7d1-6ac9-41e2-909a-6ba71a948481=Assignment(partitions=[stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7, wordcount2-0, wordcount2-1, wordcount2-2, wordcount2-3, wordcount2-4, wordcount2-5, wordcount2-6, wordcount2-7], userDataSize=168)}
+20-07-2023 10:53:48 INFO  AbstractCoordinator:754 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Successfully synced group in generation Generation{generationId=42, memberId='stream_wordcount_client-StreamThread-1-consumer-5bafd7d1-6ac9-41e2-909a-6ba71a948481', protocol='stream'}
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:393 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Updating assignment with
+	Assigned partitions:                       [wordcount2-7, wordcount2-0, wordcount2-1, wordcount2-2, wordcount2-3, wordcount2-4, wordcount2-5, wordcount2-6, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7]
+	Current owned partitions:                  []
+	Added partitions (assigned - owned):       [wordcount2-7, wordcount2-0, wordcount2-1, wordcount2-2, wordcount2-3, wordcount2-4, wordcount2-5, wordcount2-6, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7]
+	Revoked partitions (owned - assigned):     []
+
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:276 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Notifying assignor about the new Assignment(partitions=[stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7, wordcount2-0, wordcount2-1, wordcount2-2, wordcount2-3, wordcount2-4, wordcount2-5, wordcount2-6, wordcount2-7], userDataSize=168)
+20-07-2023 10:53:48 INFO  StreamsPartitionAssignor:1485 - stream-thread [stream_wordcount_client-StreamThread-1-consumer] No followup rebalance was requested, resetting the rebalance schedule.
+20-07-2023 10:53:48 INFO  TaskManager:254 - stream-thread [stream_wordcount_client-StreamThread-1] Handle new assignment with:
+	New active tasks: [0_0, 0_1, 1_0, 0_2, 1_1, 0_3, 1_2, 0_4, 1_3, 0_5, 1_4, 0_6, 1_5, 0_7, 1_6, 1_7]
+	New standby tasks: []
+	Existing active tasks: []
+	Existing standby tasks: []
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:288 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Adding newly assigned partitions: wordcount2-7, wordcount2-0, wordcount2-1, wordcount2-2, wordcount2-3, wordcount2-4, wordcount2-5, wordcount2-6, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7
+20-07-2023 10:53:48 INFO  StreamThread:225 - stream-thread [stream_wordcount_client-StreamThread-1] State transition from STARTING to PARTITIONS_ASSIGNED
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-7
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-0
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-1
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-2
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-3
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-4
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-5
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-6
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_0] Initialized
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_1] Initialized
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_2] Initialized
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_3] Initialized
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_4] Initialized
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_5] Initialized
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_6] Initialized
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_7] Initialized
+20-07-2023 10:53:48 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+20-07-2023 10:53:48 INFO  ProcessorStateManager:256 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_0] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_0] Initialized
+20-07-2023 10:53:48 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+20-07-2023 10:53:48 INFO  ProcessorStateManager:256 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_1] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_1] Initialized
+20-07-2023 10:53:48 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+20-07-2023 10:53:48 INFO  ProcessorStateManager:256 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_2] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_2] Initialized
+20-07-2023 10:53:48 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+20-07-2023 10:53:48 INFO  ProcessorStateManager:256 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_3] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_3] Initialized
+20-07-2023 10:53:48 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+20-07-2023 10:53:48 INFO  ProcessorStateManager:256 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_4] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_4] Initialized
+20-07-2023 10:53:48 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+20-07-2023 10:53:48 INFO  ProcessorStateManager:256 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_5] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_5] Initialized
+20-07-2023 10:53:48 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+20-07-2023 10:53:48 INFO  ProcessorStateManager:256 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_6] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_6] Initialized
+20-07-2023 10:53:48 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+20-07-2023 10:53:48 INFO  ProcessorStateManager:256 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_7] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7
+20-07-2023 10:53:48 INFO  StreamTask:219 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_7] Initialized
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-0
+20-07-2023 10:53:48 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_0] Restored and ready to run
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-1
+20-07-2023 10:53:48 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_1] Restored and ready to run
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-2
+20-07-2023 10:53:48 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_2] Restored and ready to run
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-3
+20-07-2023 10:53:48 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_3] Restored and ready to run
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-4
+20-07-2023 10:53:48 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_4] Restored and ready to run
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-5
+20-07-2023 10:53:48 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_5] Restored and ready to run
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-6
+20-07-2023 10:53:48 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_6] Restored and ready to run
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-7
+20-07-2023 10:53:48 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_7] Restored and ready to run
+20-07-2023 10:53:48 INFO  KafkaConsumer:1116 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1, stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+20-07-2023 10:53:48 INFO  SubscriptionState:618 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7
+20-07-2023 10:53:48 INFO  SubscriptionState:618 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6
+20-07-2023 10:53:48 INFO  SubscriptionState:618 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5
+20-07-2023 10:53:48 INFO  SubscriptionState:618 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4
+20-07-2023 10:53:48 INFO  SubscriptionState:618 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3
+20-07-2023 10:53:48 INFO  SubscriptionState:618 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2
+20-07-2023 10:53:48 INFO  SubscriptionState:618 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1
+20-07-2023 10:53:48 INFO  SubscriptionState:618 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+20-07-2023 10:53:48 INFO  Metadata:279 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Cluster ID: bfIokctfRDqL6cF8ozX5Eg
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=1000, end=5900258, totalRestored=1000} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=0, end=5911710, totalRestored=0} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=0, end=5894868, totalRestored=0} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=0, end=5918712, totalRestored=0} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=0, end=5898053, totalRestored=0} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=0, end=5860839, totalRestored=0} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=0, end=5854102, totalRestored=0} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=0, end=5842374, totalRestored=0}
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-7
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-0
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-1
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-2
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-3
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-4
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-5
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:1354 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Found no committed offset for partition wordcount2-6
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:820 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Setting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0 to the committed offset FetchPosition{offset=9725303, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:820 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Setting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1 to the committed offset FetchPosition{offset=9664868, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:820 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Setting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2 to the committed offset FetchPosition{offset=9664391, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:820 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Setting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3 to the committed offset FetchPosition{offset=9762697, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:820 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Setting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4 to the committed offset FetchPosition{offset=9787085, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:820 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Setting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5 to the committed offset FetchPosition{offset=9677301, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:820 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Setting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6 to the committed offset FetchPosition{offset=9747591, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+20-07-2023 10:53:48 INFO  ConsumerCoordinator:820 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Setting offset for partition stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7 to the committed offset FetchPosition{offset=9778625, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Resetting offset for partition wordcount2-7 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Resetting offset for partition wordcount2-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Resetting offset for partition wordcount2-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Resetting offset for partition wordcount2-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Resetting offset for partition wordcount2-3 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Resetting offset for partition wordcount2-4 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Resetting offset for partition wordcount2-5 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:48 INFO  SubscriptionState:396 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application] Resetting offset for partition wordcount2-6 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+20-07-2023 10:53:58 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=461245, end=5900258, totalRestored=461245} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=463622, end=5911710, totalRestored=463622} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=458844, end=5894868, totalRestored=458844} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=434875, end=5918712, totalRestored=434875} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=434198, end=5898053, totalRestored=434198} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=434882, end=5860839, totalRestored=434882} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=434244, end=5854102, totalRestored=434244} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=435234, end=5842374, totalRestored=435234}
+20-07-2023 10:54:08 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=922522, end=5900258, totalRestored=922522} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=927134, end=5911710, totalRestored=927134} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=927021, end=5894868, totalRestored=927021} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=927077, end=5918712, totalRestored=927077} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=924710, end=5898053, totalRestored=924710} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=927736, end=5860839, totalRestored=927736} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=925256, end=5854102, totalRestored=925256} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=906067, end=5842374, totalRestored=906067}
+20-07-2023 10:54:18 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=1410868, end=5900258, totalRestored=1410868} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=1389593, end=5911710, totalRestored=1389593} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=1389660, end=5894868, totalRestored=1389660} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=1389368, end=5918712, totalRestored=1389368} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=1387649, end=5898053, totalRestored=1387649} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=1389906, end=5860839, totalRestored=1389906} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=1387901, end=5854102, totalRestored=1387901} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=1393611, end=5842374, totalRestored=1393611}
+20-07-2023 10:54:28 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=1869459, end=5900258, totalRestored=1869459} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=1862520, end=5911710, totalRestored=1862520} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=1849691, end=5894868, totalRestored=1849691} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=1848537, end=5918712, totalRestored=1848537} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=1848332, end=5898053, totalRestored=1848332} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=1850672, end=5860839, totalRestored=1850672} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=1848423, end=5854102, totalRestored=1848423} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=1854981, end=5842374, totalRestored=1854981}
+20-07-2023 10:54:38 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=2183908, end=5900258, totalRestored=2183908} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=2193846, end=5911710, totalRestored=2193846} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=2193814, end=5894868, totalRestored=2193814} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=2191588, end=5918712, totalRestored=2191588} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=2191256, end=5898053, totalRestored=2191256} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=2195309, end=5860839, totalRestored=2195309} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=2192143, end=5854102, totalRestored=2192143} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=2200591, end=5842374, totalRestored=2200591}
+20-07-2023 10:54:48 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=2640614, end=5900258, totalRestored=2640614} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=2653466, end=5911710, totalRestored=2653466} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=2653365, end=5894868, totalRestored=2653365} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=2621746, end=5918712, totalRestored=2621746} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=2622212, end=5898053, totalRestored=2622212} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=2625277, end=5860839, totalRestored=2625277} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=2622838, end=5854102, totalRestored=2622838} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=2631813, end=5842374, totalRestored=2631813}
+20-07-2023 10:54:58 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=3120668, end=5900258, totalRestored=3120668} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=3135752, end=5911710, totalRestored=3135752} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=3137387, end=5894868, totalRestored=3137387} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=3131938, end=5918712, totalRestored=3131938} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=3122680, end=5898053, totalRestored=3122680} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=3108280, end=5860839, totalRestored=3108280} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=3105206, end=5854102, totalRestored=3105206} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=3114601, end=5842374, totalRestored=3114601}
+20-07-2023 10:55:08 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=3603627, end=5900258, totalRestored=3603627} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=3619466, end=5911710, totalRestored=3619466} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=3622049, end=5894868, totalRestored=3622049} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=3613141, end=5918712, totalRestored=3613141} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=3597503, end=5898053, totalRestored=3597503} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=3592518, end=5860839, totalRestored=3592518} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=3590116, end=5854102, totalRestored=3590116} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=3600272, end=5842374, totalRestored=3600272}
+20-07-2023 10:55:18 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=4058152, end=5900258, totalRestored=4058152} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=4074782, end=5911710, totalRestored=4074782} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=4056949, end=5894868, totalRestored=4056949} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=4039897, end=5918712, totalRestored=4039897} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=4042740, end=5898053, totalRestored=4042740} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=4048474, end=5860839, totalRestored=4048474} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=4045750, end=5854102, totalRestored=4045750} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=4057596, end=5842374, totalRestored=4057596}
+20-07-2023 10:55:29 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=4523128, end=5900258, totalRestored=4523128} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=4526486, end=5911710, totalRestored=4526486} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=4530082, end=5894868, totalRestored=4530082} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=4520742, end=5918712, totalRestored=4520742} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=4522742, end=5898053, totalRestored=4522742} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=4529924, end=5860839, totalRestored=4529924} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=4525369, end=5854102, totalRestored=4525369} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=4538516, end=5842374, totalRestored=4538516}
+20-07-2023 10:55:39 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=4931045, end=5900258, totalRestored=4931045} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=4949779, end=5911710, totalRestored=4949779} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=4952700, end=5894868, totalRestored=4952700} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=4933591, end=5918712, totalRestored=4933591} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=4917986, end=5898053, totalRestored=4917986} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=4924456, end=5860839, totalRestored=4924456} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=4920640, end=5854102, totalRestored=4920640} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=4933870, end=5842374, totalRestored=4933870}
+20-07-2023 10:55:47 INFO  StreamThread:732 - stream-thread [stream_wordcount_client-StreamThread-1] Processed 0 total records, ran 0 punctuators, and committed 0 total tasks since the last update
+20-07-2023 10:55:49 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=5351348, end=5900258, totalRestored=5351348} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=5372151, end=5911710, totalRestored=5372151} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=5375901, end=5894868, totalRestored=5375901} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=5364726, end=5918712, totalRestored=5364726} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=5342199, end=5898053, totalRestored=5342199} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=5347196, end=5860839, totalRestored=5347196} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=5342500, end=5854102, totalRestored=5342500} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=5358114, end=5842374, totalRestored=5358114}
+20-07-2023 10:55:59 INFO  StoreChangelogReader:491 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=5770863, end=5900258, totalRestored=5770863} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=5793843, end=5911710, totalRestored=5793843} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=5797454, end=5894868, totalRestored=5797454} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=5771874, end=5918712, totalRestored=5771874} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=5762238, end=5898053, totalRestored=5762238} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=5767079, end=5860839, totalRestored=5767079} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=5764281, end=5854102, totalRestored=5764281} {stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=5780214, end=5842374, totalRestored=5780214}
+20-07-2023 10:56:00 INFO  StoreChangelogReader:592 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 5842374 records
+20-07-2023 10:56:00 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_0] Restored and ready to run
+20-07-2023 10:56:01 INFO  StoreChangelogReader:592 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 5860839 records
+20-07-2023 10:56:01 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_2] Restored and ready to run
+20-07-2023 10:56:01 INFO  StoreChangelogReader:592 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 5854102 records
+20-07-2023 10:56:01 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_1] Restored and ready to run
+20-07-2023 10:56:01 INFO  StoreChangelogReader:592 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 5894868 records
+20-07-2023 10:56:01 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_5] Restored and ready to run
+20-07-2023 10:56:01 INFO  StoreChangelogReader:592 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 5898053 records
+20-07-2023 10:56:01 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_3] Restored and ready to run
+20-07-2023 10:56:01 INFO  StoreChangelogReader:592 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 5900258 records
+20-07-2023 10:56:01 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_7] Restored and ready to run
+20-07-2023 10:56:01 INFO  StoreChangelogReader:592 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 5911710 records
+20-07-2023 10:56:01 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_6] Restored and ready to run
+20-07-2023 10:56:01 INFO  StoreChangelogReader:592 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 5918712 records
+20-07-2023 10:56:01 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_4] Restored and ready to run
+20-07-2023 10:56:01 INFO  StreamThread:756 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration took 133860 ms for all tasks [0_0, 0_1, 0_2, 0_3, 0_4, 0_5, 0_6, 0_7, 1_0, 1_1, 1_2, 1_3, 1_4, 1_5, 1_6, 1_7]
+20-07-2023 10:56:01 INFO  StreamThread:225 - stream-thread [stream_wordcount_client-StreamThread-1] State transition from PARTITIONS_ASSIGNED to RUNNING
+20-07-2023 10:56:01 INFO  KafkaStreams:281 - stream-client [stream_wordcount_client] State transition from REBALANCING to RUNNING
+20-07-2023 10:57:47 INFO  StreamThread:732 - stream-thread [stream_wordcount_client-StreamThread-1] Processed 4517993 total records, ran 0 punctuators, and committed 48 total tasks since the last update

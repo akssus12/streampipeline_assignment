@@ -1,0 +1,1738 @@
+26-07-2023 08:43:44 INFO  StreamsConfig:376 - StreamsConfig values: 
+	acceptable.recovery.lag = 10000
+	application.id = stream_wordcount_application1
+	application.server = 
+	bootstrap.servers = [localhost:9092]
+	buffered.records.per.partition = 1000
+	built.in.metrics.version = latest
+	cache.max.bytes.buffering = 10485760
+	client.id = stream_wordcount_client
+	commit.interval.ms = 30000
+	connections.max.idle.ms = 540000
+	default.deserialization.exception.handler = class org.apache.kafka.streams.errors.LogAndFailExceptionHandler
+	default.dsl.store = rocksDB
+	default.key.serde = class org.apache.kafka.common.serialization.Serdes$StringSerde
+	default.list.key.serde.inner = null
+	default.list.key.serde.type = null
+	default.list.value.serde.inner = null
+	default.list.value.serde.type = null
+	default.production.exception.handler = class org.apache.kafka.streams.errors.DefaultProductionExceptionHandler
+	default.timestamp.extractor = class org.apache.kafka.streams.processor.FailOnInvalidTimestamp
+	default.value.serde = class org.apache.kafka.common.serialization.Serdes$StringSerde
+	max.task.idle.ms = 0
+	max.warmup.replicas = 2
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = DEBUG
+	metrics.sample.window.ms = 30000
+	num.standby.replicas = 0
+	num.stream.threads = 1
+	poll.ms = 100
+	probing.rebalance.interval.ms = 600000
+	processing.guarantee = at_least_once
+	rack.aware.assignment.tags = []
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	repartition.purge.interval.ms = 30000
+	replication.factor = -1
+	request.timeout.ms = 40000
+	retries = 0
+	retry.backoff.ms = 100
+	rocksdb.config.setter = class com.dcclab.examples.streams.wordcount.WordCountExample$CustomRocksDBConfig
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	state.cleanup.delay.ms = 600000
+	state.dir = /tmp/kafka-streams
+	task.timeout.ms = 300000
+	topology.optimization = none
+	upgrade.from = null
+	window.size.ms = null
+	windowed.inner.class.serde = null
+	windowstore.changelog.additional.retention.ms = 86400000
+
+26-07-2023 08:43:44 WARN  StateDirectory:138 - Using an OS temp directory in the state.dir property can cause failures with writing the checkpoint file due to the fact that this directory can be cleared by the OS. Resolved state.dir: [/tmp/kafka-streams]
+26-07-2023 08:43:44 INFO  StateDirectory:203 - Reading UUID from process file: 0076131d-b8c7-44bf-a155-06efe79012e1
+26-07-2023 08:43:44 INFO  AdminClientConfig:376 - AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = stream_wordcount_client-admin
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = DEBUG
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+26-07-2023 08:43:45 INFO  AppInfoParser:119 - Kafka version: 3.2.3
+26-07-2023 08:43:45 INFO  AppInfoParser:120 - Kafka commitId: unknown
+26-07-2023 08:43:45 INFO  AppInfoParser:121 - Kafka startTimeMs: 1690361025143
+26-07-2023 08:43:45 INFO  KafkaStreams:894 - stream-client [stream_wordcount_client] Kafka Streams version: 3.2.3
+26-07-2023 08:43:45 INFO  KafkaStreams:895 - stream-client [stream_wordcount_client] Kafka Streams commit ID: unknown
+26-07-2023 08:43:45 INFO  StreamThread:350 - stream-thread [stream_wordcount_client-StreamThread-1] Creating restore consumer client
+26-07-2023 08:43:45 INFO  ConsumerConfig:376 - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = none
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = stream_wordcount_client-StreamThread-1-restore-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = null
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = DEBUG
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+26-07-2023 08:43:45 INFO  AppInfoParser:119 - Kafka version: 3.2.3
+26-07-2023 08:43:45 INFO  AppInfoParser:120 - Kafka commitId: unknown
+26-07-2023 08:43:45 INFO  AppInfoParser:121 - Kafka startTimeMs: 1690361025200
+26-07-2023 08:43:45 INFO  StreamThread:105 - stream-thread [stream_wordcount_client-StreamThread-1] Creating thread producer client
+26-07-2023 08:43:45 INFO  ProducerConfig:376 - ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = stream_wordcount_client-StreamThread-1-producer
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = DEBUG
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+26-07-2023 08:43:45 INFO  KafkaProducer:569 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Instantiated an idempotent producer.
+26-07-2023 08:43:45 INFO  AppInfoParser:119 - Kafka version: 3.2.3
+26-07-2023 08:43:45 INFO  AppInfoParser:120 - Kafka commitId: unknown
+26-07-2023 08:43:45 INFO  AppInfoParser:121 - Kafka startTimeMs: 1690361025245
+26-07-2023 08:43:45 INFO  StreamThread:401 - stream-thread [stream_wordcount_client-StreamThread-1] Creating consumer client
+26-07-2023 08:43:45 INFO  ConsumerConfig:376 - ConsumerConfig values: 
+	allow.auto.create.topics = false
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = stream_wordcount_client-StreamThread-1-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = stream_wordcount_application1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = DEBUG
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+26-07-2023 08:43:45 INFO  AssignorConfiguration:125 - stream-thread [stream_wordcount_client-StreamThread-1-consumer] Cooperative rebalancing protocol is enabled now
+26-07-2023 08:43:45 INFO  AppInfoParser:119 - Kafka version: 3.2.3
+26-07-2023 08:43:45 INFO  AppInfoParser:120 - Kafka commitId: unknown
+26-07-2023 08:43:45 INFO  AppInfoParser:121 - Kafka startTimeMs: 1690361025298
+26-07-2023 08:43:45 INFO  WordCountExample:71 - Conductor in Reporter Class
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 0_6 for 0_6 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 1_3 for 1_3 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 1_5 for 1_5 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 0_7 for 0_7 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 1_6 for 1_6 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 1_2 for 1_2 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 0_4 for 0_4 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 1_0 for 1_0 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 1_7 for 1_7 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 0_0 for 0_0 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 1_4 for 1_4 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 0_2 for 0_2 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 0_1 for 0_1 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 0_5 for 0_5 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 1_1 for 1_1 as user calling cleanup.
+26-07-2023 08:43:45 INFO  StateDirectory:554 - stream-thread [main] Deleting task directory 0_3 for 0_3 as user calling cleanup.
+26-07-2023 08:43:45 WARN  StateDirectory:422 - stream-thread [main] Failed to delete state store directory of /tmp/kafka-streams/stream_wordcount_application1 for it is not empty
+26-07-2023 08:43:45 INFO  KafkaStreams:342 - stream-client [stream_wordcount_client] State transition from CREATED to REBALANCING
+26-07-2023 08:43:45 INFO  KafkaStreams:1298 - stream-client [stream_wordcount_client] Started 1 stream threads
+26-07-2023 08:43:45 INFO  StreamThread:544 - stream-thread [stream_wordcount_client-StreamThread-1] Starting
+26-07-2023 08:43:45 INFO  StreamThread:234 - stream-thread [stream_wordcount_client-StreamThread-1] State transition from CREATED to STARTING
+26-07-2023 08:43:45 INFO  KafkaStreams:1317 - stream-client [stream_wordcount_client] TimeUnit is SECONDS in rocksDBMetricsRecordingService
+26-07-2023 08:43:45 INFO  KafkaConsumer:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Subscribed to topic(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition, wordcount7
+26-07-2023 08:43:45 INFO  WordCountExample:94 - Number of Flush Tasks 0
+26-07-2023 08:43:45 INFO  WordCountExample:95 - Number of Compaction Tasks 0
+26-07-2023 08:43:45 INFO  WordCountExample:96 - Number of Processing Tasks 1
+26-07-2023 08:43:45 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:45 INFO  WordCountExample:98 - Total latency of Flush Tasks NaN
+26-07-2023 08:43:45 INFO  WordCountExample:99 - Total latency of Compaction Tasks NaN
+26-07-2023 08:43:45 INFO  StreamThread:843 - stream-thread [stream_wordcount_client-StreamThread-1] Processed 0 total records, ran 0 punctuators, and committed 0 total tasks since the last update
+26-07-2023 08:43:45 INFO  Metadata:287 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Cluster ID: DsTPH8IDQLWbDhZE_2ll4A
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition wordcount7-0 to 0 since the associated topicId changed from null to ye5EilKdQjOfGlwzujzRvw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition wordcount7-5 to 0 since the associated topicId changed from null to ye5EilKdQjOfGlwzujzRvw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition wordcount7-1 to 0 since the associated topicId changed from null to ye5EilKdQjOfGlwzujzRvw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition wordcount7-4 to 0 since the associated topicId changed from null to ye5EilKdQjOfGlwzujzRvw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition wordcount7-6 to 0 since the associated topicId changed from null to ye5EilKdQjOfGlwzujzRvw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition wordcount7-7 to 0 since the associated topicId changed from null to ye5EilKdQjOfGlwzujzRvw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition wordcount7-2 to 0 since the associated topicId changed from null to ye5EilKdQjOfGlwzujzRvw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition wordcount7-3 to 0 since the associated topicId changed from null to ye5EilKdQjOfGlwzujzRvw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:43:45 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:43:45 INFO  Metadata:287 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Cluster ID: DsTPH8IDQLWbDhZE_2ll4A
+26-07-2023 08:43:45 INFO  ConsumerCoordinator:897 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Discovered group coordinator 163.239.22.36:9092 (id: 2147483647 rack: null)
+26-07-2023 08:43:45 INFO  ConsumerCoordinator:566 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] (Re-)joining group
+26-07-2023 08:43:45 INFO  TransactionManager:554 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] ProducerId set to 10000 with epoch 0
+26-07-2023 08:43:45 INFO  ConsumerCoordinator:1063 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Request joining group due to: need to re-join with the given member-id: stream_wordcount_client-StreamThread-1-consumer-742b95b4-ed6a-4a60-a46e-1fb5ec4a7b06
+26-07-2023 08:43:45 INFO  ConsumerCoordinator:1063 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+26-07-2023 08:43:45 INFO  ConsumerCoordinator:566 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] (Re-)joining group
+26-07-2023 08:43:45 INFO  ConsumerCoordinator:627 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Successfully joined group with generation Generation{generationId=35, memberId='stream_wordcount_client-StreamThread-1-consumer-742b95b4-ed6a-4a60-a46e-1fb5ec4a7b06', protocol='stream'}
+26-07-2023 08:43:45 INFO  StreamsPartitionAssignor:622 - stream-thread [stream_wordcount_client-StreamThread-1-consumer] All members participating in this rebalance: 
+0076131d-b8c7-44bf-a155-06efe79012e1: [stream_wordcount_client-StreamThread-1-consumer-742b95b4-ed6a-4a60-a46e-1fb5ec4a7b06].
+26-07-2023 08:43:45 INFO  HighAvailabilityTaskAssignor:101 - Decided on assignment: {0076131d-b8c7-44bf-a155-06efe79012e1=[activeTasks: ([0_0, 0_1, 0_2, 0_3, 0_4, 0_5, 0_6, 0_7, 1_0, 1_1, 1_2, 1_3, 1_4, 1_5, 1_6, 1_7]) standbyTasks: ([]) prevActiveTasks: ([]) prevStandbyTasks: ([]) changelogOffsetTotalsByTask: ([]) taskLagTotals: ([1_0=2611297, 1_1=2590275, 1_2=2593634, 1_3=2611197, 1_4=2622158, 1_5=2610749, 1_6=2616648, 1_7=2610200]) clientTags: ([]) capacity: 1 assigned: 16]} with no followup probing rebalance.
+26-07-2023 08:43:45 INFO  StreamsPartitionAssignor:640 - stream-thread [stream_wordcount_client-StreamThread-1-consumer] Assigned tasks [1_0, 0_7, 1_7, 0_6, 1_6, 0_5, 1_5, 0_4, 1_4, 0_3, 1_3, 0_2, 1_2, 0_1, 1_1, 0_0] including stateful [1_0, 1_7, 1_6, 1_5, 1_4, 1_3, 1_2, 1_1] to clients as: 
+0076131d-b8c7-44bf-a155-06efe79012e1=[activeTasks: ([0_0, 0_1, 0_2, 0_3, 0_4, 0_5, 0_6, 0_7, 1_0, 1_1, 1_2, 1_3, 1_4, 1_5, 1_6, 1_7]) standbyTasks: ([])].
+26-07-2023 08:43:45 INFO  StreamsPartitionAssignor:867 - stream-thread [stream_wordcount_client-StreamThread-1-consumer] Client 0076131d-b8c7-44bf-a155-06efe79012e1 per-consumer assignment:
+	prev owned active {}
+	prev owned standby {stream_wordcount_client-StreamThread-1-consumer-742b95b4-ed6a-4a60-a46e-1fb5ec4a7b06=[]}
+	assigned active {stream_wordcount_client-StreamThread-1-consumer-742b95b4-ed6a-4a60-a46e-1fb5ec4a7b06=[1_0, 0_7, 1_7, 0_6, 1_6, 0_5, 1_5, 0_4, 1_4, 0_3, 1_3, 0_2, 1_2, 0_1, 1_1, 0_0]}
+	revoking active {}
+	assigned standby {}
+
+26-07-2023 08:43:45 INFO  StreamsPartitionAssignor:886 - stream-thread [stream_wordcount_client-StreamThread-1-consumer] Finished stable assignment of tasks, no followup rebalances required.
+26-07-2023 08:43:45 INFO  ConsumerCoordinator:705 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Finished assignment for group at generation 35: {stream_wordcount_client-StreamThread-1-consumer-742b95b4-ed6a-4a60-a46e-1fb5ec4a7b06=Assignment(partitions=[stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7, wordcount7-0, wordcount7-1, wordcount7-2, wordcount7-3, wordcount7-4, wordcount7-5, wordcount7-6, wordcount7-7], userDataSize=232)}
+26-07-2023 08:43:45 INFO  ConsumerCoordinator:802 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Successfully synced group in generation Generation{generationId=35, memberId='stream_wordcount_client-StreamThread-1-consumer-742b95b4-ed6a-4a60-a46e-1fb5ec4a7b06', protocol='stream'}
+26-07-2023 08:43:45 INFO  ConsumerCoordinator:428 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Updating assignment with
+	Assigned partitions:                       [stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7, wordcount7-0, wordcount7-1, wordcount7-2, wordcount7-3, wordcount7-4, wordcount7-5, wordcount7-6, wordcount7-7]
+	Current owned partitions:                  []
+	Added partitions (assigned - owned):       [stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7, wordcount7-0, wordcount7-1, wordcount7-2, wordcount7-3, wordcount7-4, wordcount7-5, wordcount7-6, wordcount7-7]
+	Revoked partitions (owned - assigned):     []
+
+26-07-2023 08:43:45 INFO  ConsumerCoordinator:300 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Notifying assignor about the new Assignment(partitions=[stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7, wordcount7-0, wordcount7-1, wordcount7-2, wordcount7-3, wordcount7-4, wordcount7-5, wordcount7-6, wordcount7-7], userDataSize=232)
+26-07-2023 08:43:45 INFO  StreamsPartitionAssignor:1361 - stream-thread [stream_wordcount_client-StreamThread-1-consumer] No followup rebalance was requested, resetting the rebalance schedule.
+26-07-2023 08:43:45 INFO  TaskManager:273 - stream-thread [stream_wordcount_client-StreamThread-1] Handle new assignment with:
+	New active tasks: [1_0, 0_7, 0_6, 1_7, 0_5, 1_6, 0_4, 1_5, 0_3, 1_4, 0_2, 1_3, 0_1, 1_2, 0_0, 1_1]
+	New standby tasks: []
+	Existing active tasks: []
+	Existing standby tasks: []
+26-07-2023 08:43:45 INFO  ConsumerCoordinator:312 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Adding newly assigned partitions: stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7, wordcount7-0, wordcount7-1, wordcount7-2, wordcount7-3, wordcount7-4, wordcount7-5, wordcount7-6, wordcount7-7
+26-07-2023 08:43:45 INFO  StreamThread:234 - stream-thread [stream_wordcount_client-StreamThread-1] State transition from STARTING to PARTITIONS_ASSIGNED
+26-07-2023 08:43:45 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_0] Initialized
+26-07-2023 08:43:45 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_1] Initialized
+26-07-2023 08:43:45 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_2] Initialized
+26-07-2023 08:43:45 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_3] Initialized
+26-07-2023 08:43:45 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_4] Initialized
+26-07-2023 08:43:45 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_5] Initialized
+26-07-2023 08:43:45 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_6] Initialized
+26-07-2023 08:43:45 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_7] Initialized
+26-07-2023 08:43:45 INFO  WordCountExample:94 - Number of Flush Tasks 1
+26-07-2023 08:43:45 INFO  WordCountExample:95 - Number of Compaction Tasks 1
+26-07-2023 08:43:45 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:45 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:45 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:45 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:46 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+26-07-2023 08:43:46 INFO  ProcessorStateManager:267 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_0] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+26-07-2023 08:43:46 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_0] Initialized
+26-07-2023 08:43:46 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+26-07-2023 08:43:46 INFO  ProcessorStateManager:267 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_1] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1
+26-07-2023 08:43:46 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_1] Initialized
+26-07-2023 08:43:46 INFO  WordCountExample:94 - Number of Flush Tasks 3
+26-07-2023 08:43:46 INFO  WordCountExample:95 - Number of Compaction Tasks 3
+26-07-2023 08:43:46 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:46 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:46 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:46 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:46 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+26-07-2023 08:43:46 INFO  ProcessorStateManager:267 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_2] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2
+26-07-2023 08:43:46 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_2] Initialized
+26-07-2023 08:43:46 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+26-07-2023 08:43:46 INFO  ProcessorStateManager:267 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_3] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3
+26-07-2023 08:43:46 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_3] Initialized
+26-07-2023 08:43:46 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+26-07-2023 08:43:46 INFO  ProcessorStateManager:267 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_4] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4
+26-07-2023 08:43:46 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_4] Initialized
+26-07-2023 08:43:46 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+26-07-2023 08:43:46 INFO  ProcessorStateManager:267 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_5] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5
+26-07-2023 08:43:46 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_5] Initialized
+26-07-2023 08:43:46 INFO  WordCountExample:94 - Number of Flush Tasks 7
+26-07-2023 08:43:46 INFO  WordCountExample:95 - Number of Compaction Tasks 7
+26-07-2023 08:43:46 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:46 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:46 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:46 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:46 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+26-07-2023 08:43:46 INFO  ProcessorStateManager:267 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_6] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6
+26-07-2023 08:43:46 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_6] Initialized
+26-07-2023 08:43:47 INFO  RocksDBTimestampedStore:100 - Opening store KSTREAM-AGGREGATE-STATE-STORE-0000000005 in regular mode
+26-07-2023 08:43:47 INFO  ProcessorStateManager:267 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_7] State store KSTREAM-AGGREGATE-STATE-STORE-0000000005 did not find checkpoint offset, hence would default to the starting offset at changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7
+26-07-2023 08:43:47 INFO  StreamTask:240 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_7] Initialized
+26-07-2023 08:43:47 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_0] Restored and ready to run
+26-07-2023 08:43:47 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_1] Restored and ready to run
+26-07-2023 08:43:47 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_2] Restored and ready to run
+26-07-2023 08:43:47 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_3] Restored and ready to run
+26-07-2023 08:43:47 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_4] Restored and ready to run
+26-07-2023 08:43:47 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_5] Restored and ready to run
+26-07-2023 08:43:47 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_6] Restored and ready to run
+26-07-2023 08:43:47 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_7] Restored and ready to run
+26-07-2023 08:43:47 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+26-07-2023 08:43:47 INFO  SubscriptionState:642 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2
+26-07-2023 08:43:47 INFO  SubscriptionState:642 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1
+26-07-2023 08:43:47 INFO  SubscriptionState:642 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4
+26-07-2023 08:43:47 INFO  SubscriptionState:642 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3
+26-07-2023 08:43:47 INFO  SubscriptionState:642 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6
+26-07-2023 08:43:47 INFO  SubscriptionState:642 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5
+26-07-2023 08:43:47 INFO  SubscriptionState:642 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7
+26-07-2023 08:43:47 INFO  SubscriptionState:642 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Seeking to EARLIEST offset of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+26-07-2023 08:43:47 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:43:47 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:43:47 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:43:47 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:43:47 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:43:47 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:43:47 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:43:47 INFO  Metadata:402 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:43:47 INFO  Metadata:287 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Cluster ID: DsTPH8IDQLWbDhZE_2ll4A
+26-07-2023 08:43:47 INFO  SubscriptionState:399 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+26-07-2023 08:43:47 INFO  SubscriptionState:399 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+26-07-2023 08:43:47 INFO  SubscriptionState:399 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+26-07-2023 08:43:47 INFO  SubscriptionState:399 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+26-07-2023 08:43:47 INFO  SubscriptionState:399 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+26-07-2023 08:43:47 INFO  SubscriptionState:399 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+26-07-2023 08:43:47 INFO  SubscriptionState:399 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+26-07-2023 08:43:47 INFO  SubscriptionState:399 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Resetting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}.
+26-07-2023 08:43:47 INFO  StoreChangelogReader:502 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=1000, end=2593634, totalRestored=1000} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=0, end=2590275, totalRestored=0} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=0, end=2622158, totalRestored=0} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=0, end=2611197, totalRestored=0} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=0, end=2616648, totalRestored=0} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=0, end=2610749, totalRestored=0} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=0, end=2610200, totalRestored=0} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=0, end=2611297, totalRestored=0}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7 to the committed offset FetchPosition{offset=4592720, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6 to the committed offset FetchPosition{offset=4580142, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5 to the committed offset FetchPosition{offset=4545111, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4 to the committed offset FetchPosition{offset=4598465, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition wordcount7-4 to the committed offset FetchPosition{offset=2734415, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition wordcount7-5 to the committed offset FetchPosition{offset=2599433, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition wordcount7-6 to the committed offset FetchPosition{offset=2386308, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition wordcount7-7 to the committed offset FetchPosition{offset=2343780, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3 to the committed offset FetchPosition{offset=4586759, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2 to the committed offset FetchPosition{offset=4540855, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1 to the committed offset FetchPosition{offset=4537518, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0 to the committed offset FetchPosition{offset=4572222, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition wordcount7-0 to the committed offset FetchPosition{offset=2342750, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition wordcount7-1 to the committed offset FetchPosition{offset=2342232, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition wordcount7-2 to the committed offset FetchPosition{offset=2770231, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  ConsumerCoordinator:968 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Setting offset for partition wordcount7-3 to the committed offset FetchPosition{offset=2718196, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[163.239.22.36:9092 (id: 0 rack: null)], epoch=0}}
+26-07-2023 08:43:47 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:47 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:47 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:47 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:47 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:47 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:47 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:47 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:47 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:47 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:47 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:47 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:48 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:48 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:48 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:48 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:48 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:48 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:48 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:48 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:48 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:48 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:48 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:48 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:49 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:49 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:49 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:49 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:49 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:49 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:49 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:49 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:49 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:49 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:49 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:49 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:50 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:50 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:50 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:50 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:50 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:50 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:50 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:50 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:50 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:50 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:50 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:50 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:51 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:51 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:51 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:51 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:51 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:51 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:51 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:51 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:51 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:51 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:51 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:51 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:52 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:52 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:52 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:52 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:52 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:52 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:52 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:52 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:52 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:52 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:52 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:52 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:53 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:53 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:53 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:53 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:53 INFO  WordCountExample:98 - Total latency of Flush Tasks 0.0
+26-07-2023 08:43:53 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:53 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:53 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:53 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:53 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:53 INFO  WordCountExample:98 - Total latency of Flush Tasks 156117.625
+26-07-2023 08:43:53 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:54 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:54 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:54 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:54 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:54 INFO  WordCountExample:98 - Total latency of Flush Tasks 156117.625
+26-07-2023 08:43:54 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:54 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:54 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:54 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:54 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:54 INFO  WordCountExample:98 - Total latency of Flush Tasks 156117.625
+26-07-2023 08:43:54 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:55 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:55 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:55 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:55 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:55 INFO  WordCountExample:98 - Total latency of Flush Tasks 156117.625
+26-07-2023 08:43:55 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:55 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:55 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:55 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:55 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:55 INFO  WordCountExample:98 - Total latency of Flush Tasks 156117.625
+26-07-2023 08:43:55 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:56 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:56 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:56 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:56 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:56 INFO  WordCountExample:98 - Total latency of Flush Tasks 156117.625
+26-07-2023 08:43:56 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:56 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:56 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:56 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:56 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:56 INFO  WordCountExample:98 - Total latency of Flush Tasks 156117.625
+26-07-2023 08:43:56 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:57 INFO  StoreChangelogReader:502 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=536850, end=2593634, totalRestored=536850} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=536197, end=2590275, totalRestored=536197} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=535155, end=2622158, totalRestored=535155} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=535544, end=2611197, totalRestored=535544} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=536903, end=2616648, totalRestored=536903} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=537480, end=2610749, totalRestored=537480} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=535648, end=2610200, totalRestored=535648} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=528910, end=2611297, totalRestored=528910}
+26-07-2023 08:43:57 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:57 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:57 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:57 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:57 INFO  WordCountExample:98 - Total latency of Flush Tasks 156117.625
+26-07-2023 08:43:57 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:57 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:57 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:57 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:57 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:57 INFO  WordCountExample:98 - Total latency of Flush Tasks 156117.625
+26-07-2023 08:43:57 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:58 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:58 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:58 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:58 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:58 INFO  WordCountExample:98 - Total latency of Flush Tasks 156117.625
+26-07-2023 08:43:58 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:58 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:58 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:58 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:58 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:58 INFO  WordCountExample:98 - Total latency of Flush Tasks 150157.75
+26-07-2023 08:43:58 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:59 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:59 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:59 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:59 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:59 INFO  WordCountExample:98 - Total latency of Flush Tasks 150157.75
+26-07-2023 08:43:59 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:43:59 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:43:59 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:43:59 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:43:59 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:43:59 INFO  WordCountExample:98 - Total latency of Flush Tasks 150157.75
+26-07-2023 08:43:59 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:00 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:00 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:00 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:00 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:00 INFO  WordCountExample:98 - Total latency of Flush Tasks 150157.75
+26-07-2023 08:44:00 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:00 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:00 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:00 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:00 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:00 INFO  WordCountExample:98 - Total latency of Flush Tasks 150157.75
+26-07-2023 08:44:00 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:01 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:01 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:01 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:01 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:01 INFO  WordCountExample:98 - Total latency of Flush Tasks 150157.75
+26-07-2023 08:44:01 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:01 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:01 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:01 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:01 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:01 INFO  WordCountExample:98 - Total latency of Flush Tasks 150157.75
+26-07-2023 08:44:01 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:02 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:02 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:02 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:02 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:02 INFO  WordCountExample:98 - Total latency of Flush Tasks 150157.75
+26-07-2023 08:44:02 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:02 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:02 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:02 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:02 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:02 INFO  WordCountExample:98 - Total latency of Flush Tasks 150157.75
+26-07-2023 08:44:02 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:03 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:03 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:03 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:03 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:03 INFO  WordCountExample:98 - Total latency of Flush Tasks 150157.75
+26-07-2023 08:44:03 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:03 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:03 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:03 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:03 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:03 INFO  WordCountExample:98 - Total latency of Flush Tasks 146385.04166666666
+26-07-2023 08:44:03 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:04 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:04 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:04 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:04 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:04 INFO  WordCountExample:98 - Total latency of Flush Tasks 146385.04166666666
+26-07-2023 08:44:04 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:04 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:04 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:04 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:04 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:04 INFO  WordCountExample:98 - Total latency of Flush Tasks 146385.04166666666
+26-07-2023 08:44:04 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:05 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:05 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:05 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:05 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:05 INFO  WordCountExample:98 - Total latency of Flush Tasks 146385.04166666666
+26-07-2023 08:44:05 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:05 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:05 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:05 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:05 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:05 INFO  WordCountExample:98 - Total latency of Flush Tasks 146385.04166666666
+26-07-2023 08:44:05 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:06 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:06 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:06 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:06 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:06 INFO  WordCountExample:98 - Total latency of Flush Tasks 146385.04166666666
+26-07-2023 08:44:06 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:06 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:06 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:06 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:06 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:06 INFO  WordCountExample:98 - Total latency of Flush Tasks 146385.04166666666
+26-07-2023 08:44:06 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:07 INFO  StoreChangelogReader:502 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=1131829, end=2593634, totalRestored=1131829} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=1104214, end=2590275, totalRestored=1104214} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=1103063, end=2622158, totalRestored=1103063} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=1104135, end=2611197, totalRestored=1104135} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=1106101, end=2616648, totalRestored=1106101} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=1106926, end=2610749, totalRestored=1106926} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=1103385, end=2610200, totalRestored=1103385} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=1104435, end=2611297, totalRestored=1104435}
+26-07-2023 08:44:07 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:07 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:07 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:07 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:07 INFO  WordCountExample:98 - Total latency of Flush Tasks 146385.04166666666
+26-07-2023 08:44:07 INFO  WordCountExample:99 - Total latency of Compaction Tasks 0.0
+26-07-2023 08:44:07 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:07 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:07 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:07 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:07 INFO  WordCountExample:98 - Total latency of Flush Tasks 145431.6458333333
+26-07-2023 08:44:07 INFO  WordCountExample:99 - Total latency of Compaction Tasks 124228.5
+26-07-2023 08:44:08 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:08 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:08 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:08 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:08 INFO  WordCountExample:98 - Total latency of Flush Tasks 145431.6458333333
+26-07-2023 08:44:08 INFO  WordCountExample:99 - Total latency of Compaction Tasks 124228.5
+26-07-2023 08:44:08 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:08 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:08 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:08 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:08 INFO  WordCountExample:98 - Total latency of Flush Tasks 146098.8125
+26-07-2023 08:44:08 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:09 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:09 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:09 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:09 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:09 INFO  WordCountExample:98 - Total latency of Flush Tasks 146098.8125
+26-07-2023 08:44:09 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:09 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:09 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:09 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:09 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:09 INFO  WordCountExample:98 - Total latency of Flush Tasks 146098.8125
+26-07-2023 08:44:09 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:10 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:10 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:10 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:10 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:10 INFO  WordCountExample:98 - Total latency of Flush Tasks 146098.8125
+26-07-2023 08:44:10 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:10 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:10 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:10 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:10 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:10 INFO  WordCountExample:98 - Total latency of Flush Tasks 146098.8125
+26-07-2023 08:44:10 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:11 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:11 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:11 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:11 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:11 INFO  WordCountExample:98 - Total latency of Flush Tasks 146098.8125
+26-07-2023 08:44:11 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:11 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:11 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:11 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:11 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:11 INFO  WordCountExample:98 - Total latency of Flush Tasks 146098.8125
+26-07-2023 08:44:11 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:12 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:12 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:12 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:12 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:12 INFO  WordCountExample:98 - Total latency of Flush Tasks 146098.8125
+26-07-2023 08:44:12 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:12 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:12 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:12 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:12 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:12 INFO  WordCountExample:98 - Total latency of Flush Tasks 145154.77500000002
+26-07-2023 08:44:12 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:13 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:13 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:13 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:13 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:13 INFO  WordCountExample:98 - Total latency of Flush Tasks 145154.77500000002
+26-07-2023 08:44:13 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:13 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:13 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:13 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:13 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:13 INFO  WordCountExample:98 - Total latency of Flush Tasks 145154.77500000002
+26-07-2023 08:44:13 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:14 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:14 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:14 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:14 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:14 INFO  WordCountExample:98 - Total latency of Flush Tasks 145154.77500000002
+26-07-2023 08:44:14 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:14 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:14 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:14 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:14 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:14 INFO  WordCountExample:98 - Total latency of Flush Tasks 145154.77500000002
+26-07-2023 08:44:14 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:15 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:15 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:15 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:15 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:15 INFO  WordCountExample:98 - Total latency of Flush Tasks 145154.77500000002
+26-07-2023 08:44:15 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:15 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:15 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:15 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:15 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:15 INFO  WordCountExample:98 - Total latency of Flush Tasks 145154.77500000002
+26-07-2023 08:44:15 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:16 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:16 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:16 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:16 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:16 INFO  WordCountExample:98 - Total latency of Flush Tasks 145154.77500000002
+26-07-2023 08:44:16 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:16 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:16 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:16 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:16 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:16 INFO  WordCountExample:98 - Total latency of Flush Tasks 145154.77500000002
+26-07-2023 08:44:16 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:17 INFO  StoreChangelogReader:502 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=1729603, end=2593634, totalRestored=1729603} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=1715851, end=2590275, totalRestored=1715851} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=1695641, end=2622158, totalRestored=1695641} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=1697142, end=2611197, totalRestored=1697142} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=1699081, end=2616648, totalRestored=1699081} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=1699819, end=2610749, totalRestored=1699819} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=1695261, end=2610200, totalRestored=1695261} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=1697033, end=2611297, totalRestored=1697033}
+26-07-2023 08:44:17 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:17 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:17 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:17 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:17 INFO  WordCountExample:98 - Total latency of Flush Tasks 145154.77500000002
+26-07-2023 08:44:17 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:17 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:17 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:17 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:17 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:17 INFO  WordCountExample:98 - Total latency of Flush Tasks 143535.10416666666
+26-07-2023 08:44:17 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:18 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:18 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:18 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:18 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:18 INFO  WordCountExample:98 - Total latency of Flush Tasks 143535.10416666666
+26-07-2023 08:44:18 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:18 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:18 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:18 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:18 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:18 INFO  WordCountExample:98 - Total latency of Flush Tasks 143535.10416666666
+26-07-2023 08:44:18 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:19 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:19 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:19 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:19 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:19 INFO  WordCountExample:98 - Total latency of Flush Tasks 143535.10416666666
+26-07-2023 08:44:19 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:19 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:19 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:19 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:19 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:19 INFO  WordCountExample:98 - Total latency of Flush Tasks 143535.10416666666
+26-07-2023 08:44:19 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:20 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:20 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:20 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:20 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:20 INFO  WordCountExample:98 - Total latency of Flush Tasks 143535.10416666666
+26-07-2023 08:44:20 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:20 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:20 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:20 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:20 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:20 INFO  WordCountExample:98 - Total latency of Flush Tasks 143535.10416666666
+26-07-2023 08:44:20 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:21 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:21 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:21 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:21 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:21 INFO  WordCountExample:98 - Total latency of Flush Tasks 143535.10416666666
+26-07-2023 08:44:21 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:21 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:21 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:21 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:21 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:21 INFO  WordCountExample:98 - Total latency of Flush Tasks 143112.7886904762
+26-07-2023 08:44:21 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:22 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:22 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:22 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:22 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:22 INFO  WordCountExample:98 - Total latency of Flush Tasks 143112.7886904762
+26-07-2023 08:44:22 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:22 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:22 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:22 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:22 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:22 INFO  WordCountExample:98 - Total latency of Flush Tasks 142722.76785714287
+26-07-2023 08:44:22 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:23 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:23 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:23 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:23 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:23 INFO  WordCountExample:98 - Total latency of Flush Tasks 142722.76785714287
+26-07-2023 08:44:23 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:23 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:23 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:23 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:23 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:23 INFO  WordCountExample:98 - Total latency of Flush Tasks 142722.76785714287
+26-07-2023 08:44:23 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:24 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:24 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:24 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:24 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:24 INFO  WordCountExample:98 - Total latency of Flush Tasks 142722.76785714287
+26-07-2023 08:44:24 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:24 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:24 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:24 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:24 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:24 INFO  WordCountExample:98 - Total latency of Flush Tasks 142722.76785714287
+26-07-2023 08:44:24 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:25 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:25 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:25 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:25 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:25 INFO  WordCountExample:98 - Total latency of Flush Tasks 142722.76785714287
+26-07-2023 08:44:25 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:25 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:25 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:25 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:25 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:25 INFO  WordCountExample:98 - Total latency of Flush Tasks 142722.76785714287
+26-07-2023 08:44:25 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:26 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:26 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:26 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:26 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:26 INFO  WordCountExample:98 - Total latency of Flush Tasks 142722.76785714287
+26-07-2023 08:44:26 INFO  WordCountExample:99 - Total latency of Compaction Tasks 234888.625
+26-07-2023 08:44:26 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:26 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:26 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:26 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:26 INFO  WordCountExample:98 - Total latency of Flush Tasks 142390.296875
+26-07-2023 08:44:26 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:27 INFO  StoreChangelogReader:502 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration in progress for 8 partitions. {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2: position=2320278, end=2593634, totalRestored=2320278} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1: position=2315617, end=2590275, totalRestored=2315617} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4: position=2297964, end=2622158, totalRestored=2297964} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3: position=2286740, end=2611197, totalRestored=2286740} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6: position=2289272, end=2616648, totalRestored=2289272} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5: position=2289171, end=2610749, totalRestored=2289171} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7: position=2284110, end=2610200, totalRestored=2284110} {stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0: position=2285162, end=2611297, totalRestored=2285162}
+26-07-2023 08:44:27 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:27 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:27 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:27 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:27 INFO  WordCountExample:98 - Total latency of Flush Tasks 142390.296875
+26-07-2023 08:44:27 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:27 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:27 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:27 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:27 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:27 INFO  WordCountExample:98 - Total latency of Flush Tasks 142390.296875
+26-07-2023 08:44:27 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:28 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:28 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:28 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:28 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:28 INFO  WordCountExample:98 - Total latency of Flush Tasks 142390.296875
+26-07-2023 08:44:28 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:28 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:28 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:28 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:28 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:28 INFO  WordCountExample:98 - Total latency of Flush Tasks 142390.296875
+26-07-2023 08:44:28 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:29 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:29 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:29 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:29 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:29 INFO  WordCountExample:98 - Total latency of Flush Tasks 142390.296875
+26-07-2023 08:44:29 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:29 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:29 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:29 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:29 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:29 INFO  WordCountExample:98 - Total latency of Flush Tasks 142390.296875
+26-07-2023 08:44:29 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:30 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:30 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:30 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:30 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:30 INFO  WordCountExample:98 - Total latency of Flush Tasks 142390.296875
+26-07-2023 08:44:30 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:30 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:30 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:30 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:30 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:30 INFO  WordCountExample:98 - Total latency of Flush Tasks 142396.21875
+26-07-2023 08:44:30 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:31 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:31 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:31 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:31 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:31 INFO  WordCountExample:98 - Total latency of Flush Tasks 142396.21875
+26-07-2023 08:44:31 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:31 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:31 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:31 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:31 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:31 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:31 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:31 INFO  StoreChangelogReader:609 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 2593634 records
+26-07-2023 08:44:32 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_2] Restored and ready to run
+26-07-2023 08:44:32 INFO  StoreChangelogReader:609 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 2590275 records
+26-07-2023 08:44:32 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_1] Restored and ready to run
+26-07-2023 08:44:32 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:32 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:32 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:32 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:32 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:32 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:32 INFO  StoreChangelogReader:609 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 2611197 records
+26-07-2023 08:44:32 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_3] Restored and ready to run
+26-07-2023 08:44:32 INFO  StoreChangelogReader:609 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 2616648 records
+26-07-2023 08:44:32 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_6] Restored and ready to run
+26-07-2023 08:44:32 INFO  StoreChangelogReader:609 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 2610749 records
+26-07-2023 08:44:32 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_5] Restored and ready to run
+26-07-2023 08:44:32 INFO  StoreChangelogReader:609 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 2610200 records
+26-07-2023 08:44:32 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_7] Restored and ready to run
+26-07-2023 08:44:32 INFO  StoreChangelogReader:609 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 2611297 records
+26-07-2023 08:44:32 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_0] Restored and ready to run
+26-07-2023 08:44:32 INFO  StoreChangelogReader:609 - stream-thread [stream_wordcount_client-StreamThread-1] Finished restoring changelog stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4 to store KSTREAM-AGGREGATE-STATE-STORE-0000000005 with a total number of 2622158 records
+26-07-2023 08:44:32 INFO  StreamTask:265 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_4] Restored and ready to run
+26-07-2023 08:44:32 INFO  StreamThread:867 - stream-thread [stream_wordcount_client-StreamThread-1] Restoration took 47001 ms for all tasks [0_0, 0_1, 0_2, 0_3, 0_4, 0_5, 0_6, 0_7, 1_0, 1_1, 1_2, 1_3, 1_4, 1_5, 1_6, 1_7]
+26-07-2023 08:44:32 INFO  StreamThread:234 - stream-thread [stream_wordcount_client-StreamThread-1] State transition from PARTITIONS_ASSIGNED to RUNNING
+26-07-2023 08:44:32 INFO  KafkaStreams:342 - stream-client [stream_wordcount_client] State transition from REBALANCING to RUNNING
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for wordcount7-0 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for wordcount7-1 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for wordcount7-2 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for wordcount7-3 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for wordcount7-4 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for wordcount7-5 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for wordcount7-6 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for wordcount7-7 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6 in order to compute lag
+26-07-2023 08:44:32 INFO  KafkaConsumer:2265 - [Consumer clientId=stream_wordcount_client-StreamThread-1-consumer, groupId=stream_wordcount_application1] Requesting the log end offset for stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7 in order to compute lag
+26-07-2023 08:44:32 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:32 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:32 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:32 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:32 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:32 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:33 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-0 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:44:33 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-5 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:44:33 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-4 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:44:33 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-1 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:44:33 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-6 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:44:33 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-7 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:44:33 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-2 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:44:33 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-repartition-3 to 0 since the associated topicId changed from null to IWGAC1tjTz-GUHcnAC1ixw
+26-07-2023 08:44:33 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:33 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:33 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:33 INFO  WordCountExample:97 - Total latency of Record Tasks NaN
+26-07-2023 08:44:33 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:33 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:33 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:33 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:33 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:33 INFO  WordCountExample:97 - Total latency of Record Tasks 20991.831549245253
+26-07-2023 08:44:33 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:33 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:34 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:34 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:34 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:34 INFO  WordCountExample:97 - Total latency of Record Tasks 14033.832170138532
+26-07-2023 08:44:34 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:34 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:34 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:34 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:34 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:34 INFO  WordCountExample:97 - Total latency of Record Tasks 11719.379764210093
+26-07-2023 08:44:34 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:34 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:35 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:35 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:35 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:35 INFO  WordCountExample:97 - Total latency of Record Tasks 10626.454864293735
+26-07-2023 08:44:35 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:35 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3 to 0 since the associated topicId changed from null to TZnzXaOJThO8TBBdrsWOpA
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition wordcount-output7-0 to 0 since the associated topicId changed from null to eEYPA9UyTsqWxOwjYEhX5w
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition wordcount-output7-5 to 0 since the associated topicId changed from null to eEYPA9UyTsqWxOwjYEhX5w
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition wordcount-output7-1 to 0 since the associated topicId changed from null to eEYPA9UyTsqWxOwjYEhX5w
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition wordcount-output7-4 to 0 since the associated topicId changed from null to eEYPA9UyTsqWxOwjYEhX5w
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition wordcount-output7-6 to 0 since the associated topicId changed from null to eEYPA9UyTsqWxOwjYEhX5w
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition wordcount-output7-7 to 0 since the associated topicId changed from null to eEYPA9UyTsqWxOwjYEhX5w
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition wordcount-output7-2 to 0 since the associated topicId changed from null to eEYPA9UyTsqWxOwjYEhX5w
+26-07-2023 08:44:35 INFO  Metadata:402 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Resetting the last seen epoch of partition wordcount-output7-3 to 0 since the associated topicId changed from null to eEYPA9UyTsqWxOwjYEhX5w
+26-07-2023 08:44:35 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:35 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:35 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:35 INFO  WordCountExample:97 - Total latency of Record Tasks 11475.024281424015
+26-07-2023 08:44:35 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:35 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:36 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:36 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:36 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:36 INFO  WordCountExample:97 - Total latency of Record Tasks 12425.835916296788
+26-07-2023 08:44:36 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:36 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:36 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:36 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:36 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:36 INFO  WordCountExample:97 - Total latency of Record Tasks 11666.81246052128
+26-07-2023 08:44:36 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:36 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:37 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:37 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:37 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:37 INFO  WordCountExample:97 - Total latency of Record Tasks 11129.202496066313
+26-07-2023 08:44:37 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:37 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:37 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:37 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:37 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:37 INFO  WordCountExample:97 - Total latency of Record Tasks 10650.392409896434
+26-07-2023 08:44:37 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:37 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:38 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:38 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:38 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:38 INFO  WordCountExample:97 - Total latency of Record Tasks 10723.282322242145
+26-07-2023 08:44:38 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:38 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:38 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:38 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:38 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:38 INFO  WordCountExample:97 - Total latency of Record Tasks 11118.706162854869
+26-07-2023 08:44:38 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:38 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:39 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:39 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:39 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:39 INFO  WordCountExample:97 - Total latency of Record Tasks 10681.212053575802
+26-07-2023 08:44:39 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:39 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:39 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:39 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:39 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:39 INFO  WordCountExample:97 - Total latency of Record Tasks 10365.175082863812
+26-07-2023 08:44:39 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:39 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:40 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:40 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:40 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:40 INFO  WordCountExample:97 - Total latency of Record Tasks 10156.13165697633
+26-07-2023 08:44:40 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:40 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:40 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:40 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:40 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:40 INFO  WordCountExample:97 - Total latency of Record Tasks 10281.967304042659
+26-07-2023 08:44:40 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:40 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:41 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:41 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:41 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:41 INFO  WordCountExample:97 - Total latency of Record Tasks 10526.622692807845
+26-07-2023 08:44:41 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:41 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:41 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:41 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:41 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:41 INFO  WordCountExample:97 - Total latency of Record Tasks 10327.005941126376
+26-07-2023 08:44:41 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:41 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:42 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:42 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:42 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:42 INFO  WordCountExample:97 - Total latency of Record Tasks 10156.552835691107
+26-07-2023 08:44:42 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:42 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:42 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:42 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:42 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:42 INFO  WordCountExample:97 - Total latency of Record Tasks 10099.170828816214
+26-07-2023 08:44:42 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:42 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:43 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:43 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:43 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:43 INFO  WordCountExample:97 - Total latency of Record Tasks 10072.069639881905
+26-07-2023 08:44:43 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:43 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:43 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:43 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:43 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:43 INFO  WordCountExample:97 - Total latency of Record Tasks 10337.021739493162
+26-07-2023 08:44:43 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:43 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:44 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:44 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:44 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:44 INFO  WordCountExample:97 - Total latency of Record Tasks 10203.92040808589
+26-07-2023 08:44:44 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:44 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:44 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:44 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:44 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:44 INFO  WordCountExample:97 - Total latency of Record Tasks 10040.371278232586
+26-07-2023 08:44:44 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:44 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:45 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:45 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:45 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:45 INFO  WordCountExample:97 - Total latency of Record Tasks 10004.521036785105
+26-07-2023 08:44:45 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:45 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:45 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:45 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:45 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:45 INFO  WordCountExample:97 - Total latency of Record Tasks 9950.03296174829
+26-07-2023 08:44:45 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:45 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:46 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:46 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:46 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:46 INFO  WordCountExample:97 - Total latency of Record Tasks 10112.868874921141
+26-07-2023 08:44:46 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:46 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:46 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:46 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:46 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:46 INFO  WordCountExample:97 - Total latency of Record Tasks 10008.618801201992
+26-07-2023 08:44:46 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:46 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:47 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:47 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:47 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:47 INFO  WordCountExample:97 - Total latency of Record Tasks 9919.798333155435
+26-07-2023 08:44:47 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:47 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:47 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:47 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:47 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:47 INFO  WordCountExample:97 - Total latency of Record Tasks 9900.399722885697
+26-07-2023 08:44:47 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:47 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:48 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:48 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:48 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:48 INFO  WordCountExample:97 - Total latency of Record Tasks 9831.048343630586
+26-07-2023 08:44:48 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:48 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:48 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:48 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:48 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:48 INFO  WordCountExample:97 - Total latency of Record Tasks 10008.909155754547
+26-07-2023 08:44:48 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:48 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:49 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:49 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:49 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:49 INFO  WordCountExample:97 - Total latency of Record Tasks 9909.761861855824
+26-07-2023 08:44:49 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:49 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:49 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:49 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:49 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:49 INFO  WordCountExample:97 - Total latency of Record Tasks 9811.643636884162
+26-07-2023 08:44:49 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:49 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:50 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:50 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:50 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:50 INFO  WordCountExample:97 - Total latency of Record Tasks 9838.302506789398
+26-07-2023 08:44:50 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:50 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:50 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:50 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:50 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:50 INFO  WordCountExample:97 - Total latency of Record Tasks 9815.97341569156
+26-07-2023 08:44:50 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:50 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:51 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:51 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:51 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:51 INFO  WordCountExample:97 - Total latency of Record Tasks 9946.525064478885
+26-07-2023 08:44:51 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:51 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:51 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:51 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:51 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:51 INFO  WordCountExample:97 - Total latency of Record Tasks 9917.439277397803
+26-07-2023 08:44:51 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:51 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:52 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:52 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:52 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:52 INFO  WordCountExample:97 - Total latency of Record Tasks 9843.282492432021
+26-07-2023 08:44:52 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:52 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:52 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:52 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:52 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:52 INFO  WordCountExample:97 - Total latency of Record Tasks 9857.176942384704
+26-07-2023 08:44:52 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:52 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:53 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:53 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:53 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:53 INFO  WordCountExample:97 - Total latency of Record Tasks 9806.46383388823
+26-07-2023 08:44:53 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:53 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:53 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:53 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:53 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:53 INFO  WordCountExample:97 - Total latency of Record Tasks 9863.161849286384
+26-07-2023 08:44:53 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:53 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:54 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:54 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:54 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:54 INFO  WordCountExample:97 - Total latency of Record Tasks 9871.363241012681
+26-07-2023 08:44:54 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:54 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:54 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:54 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:54 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:54 INFO  WordCountExample:97 - Total latency of Record Tasks 9789.806538370096
+26-07-2023 08:44:54 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:54 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:55 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:55 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:55 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:55 INFO  WordCountExample:97 - Total latency of Record Tasks 9808.73681353868
+26-07-2023 08:44:55 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:55 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:55 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:55 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:55 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:55 INFO  WordCountExample:97 - Total latency of Record Tasks 9757.69344940028
+26-07-2023 08:44:55 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:55 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:56 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:56 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:56 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:56 INFO  WordCountExample:97 - Total latency of Record Tasks 9856.201747835012
+26-07-2023 08:44:56 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:56 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:56 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:56 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:56 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:56 INFO  WordCountExample:97 - Total latency of Record Tasks 9810.327365287387
+26-07-2023 08:44:56 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:56 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:57 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:57 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:57 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:57 INFO  WordCountExample:97 - Total latency of Record Tasks 9777.001841699423
+26-07-2023 08:44:57 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:57 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:57 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:57 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:57 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:57 INFO  WordCountExample:97 - Total latency of Record Tasks 9735.171240661452
+26-07-2023 08:44:57 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:57 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:58 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:58 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:58 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:58 INFO  WordCountExample:97 - Total latency of Record Tasks 9711.94644989945
+26-07-2023 08:44:58 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:58 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:58 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:58 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:58 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:58 INFO  WordCountExample:97 - Total latency of Record Tasks 9761.511218369225
+26-07-2023 08:44:58 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:58 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:59 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:59 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:59 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:59 INFO  WordCountExample:97 - Total latency of Record Tasks 9766.154600387383
+26-07-2023 08:44:59 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:59 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:44:59 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:44:59 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:44:59 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:44:59 INFO  WordCountExample:97 - Total latency of Record Tasks 9784.666905646498
+26-07-2023 08:44:59 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:44:59 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:00 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:00 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:00 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:00 INFO  WordCountExample:97 - Total latency of Record Tasks 9727.79277985763
+26-07-2023 08:45:00 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:45:00 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:00 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:00 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:00 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:00 INFO  WordCountExample:97 - Total latency of Record Tasks 9685.281135691055
+26-07-2023 08:45:00 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:45:00 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:01 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:01 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:01 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:01 INFO  WordCountExample:97 - Total latency of Record Tasks 9740.739530794906
+26-07-2023 08:45:01 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:45:01 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:01 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:01 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:01 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:01 INFO  WordCountExample:97 - Total latency of Record Tasks 9755.310406865072
+26-07-2023 08:45:01 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:45:01 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:02 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:02 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:02 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:02 INFO  WordCountExample:97 - Total latency of Record Tasks 9743.550201766846
+26-07-2023 08:45:02 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:45:02 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:02 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:02 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:02 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:02 INFO  WordCountExample:97 - Total latency of Record Tasks 9717.531781242027
+26-07-2023 08:45:02 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:45:02 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:03 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:03 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:03 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:03 INFO  WordCountExample:97 - Total latency of Record Tasks 9717.531781242027
+26-07-2023 08:45:03 INFO  WordCountExample:98 - Total latency of Flush Tasks 141740.45833333334
+26-07-2023 08:45:03 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:03 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:03 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:03 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:03 INFO  WordCountExample:97 - Total latency of Record Tasks 9717.531781242027
+26-07-2023 08:45:03 INFO  WordCountExample:98 - Total latency of Flush Tasks 141442.55555555556
+26-07-2023 08:45:03 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:04 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:04 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:04 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:04 INFO  WordCountExample:97 - Total latency of Record Tasks 9717.531781242027
+26-07-2023 08:45:04 INFO  WordCountExample:98 - Total latency of Flush Tasks 141442.55555555556
+26-07-2023 08:45:04 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:04 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:04 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:04 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:04 INFO  WordCountExample:97 - Total latency of Record Tasks 9760.895112270446
+26-07-2023 08:45:04 INFO  WordCountExample:98 - Total latency of Flush Tasks 139544.8375
+26-07-2023 08:45:04 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:05 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:05 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:05 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:05 INFO  WordCountExample:97 - Total latency of Record Tasks 9771.117525487132
+26-07-2023 08:45:05 INFO  WordCountExample:98 - Total latency of Flush Tasks 139544.8375
+26-07-2023 08:45:05 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:05 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:05 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:05 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:05 INFO  WordCountExample:97 - Total latency of Record Tasks 9788.057010059982
+26-07-2023 08:45:05 INFO  WordCountExample:98 - Total latency of Flush Tasks 139544.8375
+26-07-2023 08:45:05 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:06 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:06 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:06 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:06 INFO  WordCountExample:97 - Total latency of Record Tasks 9797.316279945513
+26-07-2023 08:45:06 INFO  WordCountExample:98 - Total latency of Flush Tasks 139544.8375
+26-07-2023 08:45:06 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:06 INFO  KafkaStreams:342 - stream-client [stream_wordcount_client] State transition from RUNNING to PENDING_SHUTDOWN
+26-07-2023 08:45:06 INFO  StreamThread:1113 - stream-thread [stream_wordcount_client-StreamThread-1] Informed to shut down
+26-07-2023 08:45:06 INFO  StreamThread:234 - stream-thread [stream_wordcount_client-StreamThread-1] State transition from RUNNING to PENDING_SHUTDOWN
+26-07-2023 08:45:06 INFO  KafkaStreams:1346 - stream-client [stream_wordcount_client] Shutting down 1 stream threads
+26-07-2023 08:45:06 INFO  StreamThread:1127 - stream-thread [stream_wordcount_client-StreamThread-1] Shutting down
+26-07-2023 08:45:06 INFO  WordCountExample:94 - Number of Flush Tasks 8
+26-07-2023 08:45:06 INFO  WordCountExample:95 - Number of Compaction Tasks 8
+26-07-2023 08:45:06 INFO  WordCountExample:96 - Number of Processing Tasks 17
+26-07-2023 08:45:06 INFO  WordCountExample:97 - Total latency of Record Tasks 9798.794156227435
+26-07-2023 08:45:06 INFO  WordCountExample:98 - Total latency of Flush Tasks 139544.8375
+26-07-2023 08:45:06 INFO  WordCountExample:99 - Total latency of Compaction Tasks 253815.4375
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_0] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_0] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_0] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_0] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_1] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_1] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_1] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_1] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_2] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_2] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_2] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_2] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_3] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_3] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_3] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_3] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_4] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_4] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_4] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_4] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_5] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_5] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_5] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_5] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_6] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_6] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_6] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_6] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_7] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_7] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-0
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_7] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [0_7] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_0] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_0] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-1, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_0] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_0] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_1] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_1] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-2, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_1] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_1] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_2] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_2] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-3, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_2] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_2] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_3] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_3] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-4, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_3] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_3] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_4] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_4] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-5, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_4] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_4] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_5] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_5] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-6, stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_5] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_5] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_6] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_6] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1123 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Subscribed to partition(s): stream_wordcount_application1-KSTREAM-AGGREGATE-STATE-STORE-0000000005-changelog-7
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_6] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_6] Closed clean
+26-07-2023 08:45:07 INFO  StreamTask:1229 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_7] Suspended RUNNING
+26-07-2023 08:45:07 INFO  StreamTask:300 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_7] Suspended running
+26-07-2023 08:45:07 INFO  KafkaConsumer:1077 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+26-07-2023 08:45:07 INFO  RecordCollectorImpl:268 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_7] Closing record collector clean
+26-07-2023 08:45:07 INFO  StreamTask:524 - stream-thread [stream_wordcount_client-StreamThread-1] task [1_7] Closed clean
+26-07-2023 08:45:07 INFO  KafkaProducer:1249 - [Producer clientId=stream_wordcount_client-StreamThread-1-producer] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+26-07-2023 08:45:07 INFO  Metrics:659 - Metrics scheduler closed
+26-07-2023 08:45:07 INFO  Metrics:663 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+26-07-2023 08:45:07 INFO  Metrics:669 - Metrics reporters closed
+26-07-2023 08:45:07 INFO  AppInfoParser:83 - App info kafka.producer for stream_wordcount_client-StreamThread-1-producer unregistered
+26-07-2023 08:45:07 INFO  KafkaConsumer:1077 - [Consumer clientId=stream_wordcount_client-StreamThread-1-restore-consumer, groupId=null] Unsubscribed all topics or patterns and assigned partitions
+26-07-2023 08:45:07 INFO  Metrics:659 - Metrics scheduler closed
+26-07-2023 08:45:07 INFO  Metrics:663 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+26-07-2023 08:45:07 INFO  Metrics:669 - Metrics reporters closed
+26-07-2023 08:45:07 INFO  AppInfoParser:83 - App info kafka.consumer for stream_wordcount_client-StreamThread-1-consumer unregistered
+26-07-2023 08:45:07 INFO  Metrics:659 - Metrics scheduler closed
+26-07-2023 08:45:07 INFO  Metrics:663 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+26-07-2023 08:45:07 INFO  Metrics:669 - Metrics reporters closed
+26-07-2023 08:45:07 INFO  AppInfoParser:83 - App info kafka.consumer for stream_wordcount_client-StreamThread-1-restore-consumer unregistered
+26-07-2023 08:45:07 INFO  StreamThread:234 - stream-thread [stream_wordcount_client-StreamThread-1] State transition from PENDING_SHUTDOWN to DEAD
+26-07-2023 08:45:07 INFO  StreamThread:1162 - stream-thread [stream_wordcount_client-StreamThread-1] Shutdown complete
+26-07-2023 08:45:07 INFO  KafkaStreams:1364 - stream-client [stream_wordcount_client] Shutdown 1 stream threads complete
+26-07-2023 08:45:07 INFO  AppInfoParser:83 - App info kafka.admin.client for stream_wordcount_client-admin unregistered
+26-07-2023 08:45:07 INFO  Metrics:659 - Metrics scheduler closed
+26-07-2023 08:45:07 INFO  Metrics:663 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+26-07-2023 08:45:07 INFO  Metrics:669 - Metrics reporters closed
+26-07-2023 08:45:07 INFO  Metrics:659 - Metrics scheduler closed
+26-07-2023 08:45:07 INFO  Metrics:663 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+26-07-2023 08:45:07 INFO  Metrics:669 - Metrics reporters closed
+26-07-2023 08:45:07 INFO  KafkaStreams:342 - stream-client [stream_wordcount_client] State transition from PENDING_SHUTDOWN to NOT_RUNNING
+26-07-2023 08:45:07 INFO  KafkaStreams:1430 - stream-client [stream_wordcount_client] Streams client stopped completely
